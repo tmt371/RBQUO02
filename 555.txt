@@ -1,0 +1,56 @@
+
+
+撰寫一個函數：
+
+讓bottom section container 裡面的 total summary 表格有下列功能：
+
+
+
+A- 先找到「.section.middle-container2」裡面的「infotable」。
+B- 把infotable內的sellprice（也就是 rows[1].cells[7]）記錄下來。
+C- 找到「.section.middle-container」裡面的「datatable」，計算扣除表頭以外，column index 0 總共有幾row，命為「RBQty]。
+
+.section.middle-container table
+
+1. column index 1 全列的每一行單元格都處於可輸入的狀態，但是只能輸入數字，且一律為正數。
+2. column index 1列，Row 0 單元格，命名內容為Disnt，預設為空白，而當單元格空白時，其值等於0，如果用戶輸入任何數字，就顯示為「數字％」，例如輸入12，就顯示為「12％」。
+3. column index 1列，Row 1 單元格，命名內容為Delivey，預設值為100
+4. column index 1列，Row 2 單元格，命名內容為Install，預設值為 RBQty*15
+5. column index 1列，Row 3 單元格，命名內容為FinalTotal，預設值為：
+
+Sellprice*(100-Disnt)/100
+
+
+
+
+6. column index 1列，Row 3 單元格預設值為0
+
+
+
+ 的每一行單元格都處於可輸入的狀態
+2. 當執行這個函數時，預設把游標焦點放在 row index 0的單元格。
+3. 每當用戶按下enter後，就完成輸入、把焦點移到下一row的單元格。
+4. 
+
+
+.section.middle-container2
+
+
+這個JS檔裡面有一個函數「function processDataTable」，這個函數會在 .section.middle-container 裡面產生一個datatable，
+請分析這個JS後，在這個「function processDataTable」函數的最後，寫一個指令，調用一個外部函數「AddRBTotal」。
+
+並根據下列目標撰寫這個「AddRBTotal」函數：
+
+1.針對 datatable 的 column index 11列，除表頭外，把每一行的單元格數值相加，命名為RBsubtotal。 
+2.在datatable表格最後一行下面新增兩行。
+3.針對這兩行，進行如下處理：
+
+A-倒數第二行，把 column index 10 填入Subtotal，黑字，居中對齊。
+B-倒數第二行，把RBsubtotal 填入 column index 11，並把這個單元格內的值命名為2ndsubtotal。
+C-倒數第一行，把 column index 10 設定成可輸入狀態，僅准輸入數字、且為正數，所輸入的數值命名為Discnt，預設為空白，當Discnt為空白時，Discnt=0。
+D-倒數第一行，把 column index 11 命為RBFinalTotal，RBFinalTotal= 2ndsubtotal*[(100-Discnt)/100]
+
+4.倒數第二行，把column index 0 到 index 9 的單元格合併成為單一一個單元格，並在這個單元格內填入「SubTotal」，黑字、靠右對齊。
+
+5.倒數第一行，把column index 0 到 index 9 的單元格合併成為單一一個單元格，並在這個單元格內填入「Discount ％」，黑字、靠右對齊。
+

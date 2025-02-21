@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZ Blinds & Shutters Quotation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            width: 20cm;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: #E6F3FF;
+            padding: 13.5px;
+            padding-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            height: 250px;
+        }
+
+        .header h1 {
+            color: #E97132;
+            margin: 0;
+        }
+
+        .header-content {
+            line-height: 1.1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header-title {
+            margin-bottom: auto;
+        }
+
+        .header-details {
+            margin-top: auto;
+        }
+
+        .company-info {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .company-name {
+            margin-bottom: auto;
+        }
+
+        .company-details {
+            margin-top: auto;
+        }
+
+        .middle-container {
+            width: 20cm;
+            min-height: 25cm;
+            height: auto;
+            border: 1px solid black;
+            margin: 20px auto;
+        }
+
+        .middle-container2 {
+            width: 20cm;
+            display: flex;
+            border: 1px solid black;
+            margin: 10px auto 10px auto;
+        }
+
+        .bottom-section-container {
+            width: 20cm;
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .payment-method {
+            width: 8cm;
+            height: 8cm;
+            border: 1px solid black;
+            margin-bottom: 0;
+        }
+
+        .payment-method table {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
+
+        .payment-method th {
+            background-color: #FFFACD;
+            font-weight: bold;
+            text-align: center;
+            height: 1cm;
+        }
+
+        .payment-method td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .payment-method .method-number {
+            width: 1cm;
+            background-color: #f0f0f0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .payment-method .method-details {
+            width: 6cm;
+        }
+
+        .payment-method .method-1 {
+            height: 2.5cm;
+        }
+
+        .payment-method .method-2 {
+            height: 1cm;
+        }
+
+        .payment-method .footer {
+            color: blue;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .total-summary {
+            width: 8cm;
+            align-self: flex-start;
+        }
+
+        .total-summary table {
+            display: table;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        .total-summary tr {
+            display: flex;
+        }
+
+        .total-summary td:first-child {
+            flex-grow: 1;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .total-summary table td:nth-child(2) {
+            width: 3cm;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .date-input {
+            border: none;
+            border-bottom: 1px solid #333;
+            padding: 5px 0;
+            width: 100px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section header">
+        <div class="header-content">
+            <h1 class="header-title">Quotation</h1>
+            <div class="header-details">
+                <p>Ref: <span contenteditable="true" id="ref"></span></p>
+                <p>Customer: <span contenteditable="true" id="customer"></span></p>
+                <p>Address: <span contenteditable="true" id="address"></span></p>
+                <p>Phone: <span contenteditable="true" id="phone"></span></p>
+                <p>Email: <span contenteditable="true" id="email"></span></p>
+                <p><strong>Issue Date:</strong> <span contenteditable="true" class="date-input" id="issueDate"></span>
+                    <strong>Due Date:</strong> <span contenteditable="true" class="date-input"
+                        id="dueDateDisplay"></span>
+                </p>
+            </div>
+        </div>
+        <div class="company-info header-content">
+            <h2 class="company-name">EZ Blinds & Shutters</h2>
+            <div class="company-details">
+                <p>ABN: 52 62 74 20 777</p>
+                <p>Address: U11/ 271 Wells Rd, Chelsea Heights</p>
+                <p>Phone: 0466 965 168</p>
+                <p>email:ezblinds ＠ezbns．com．au</p>
+                <p>Web: www.ezbns.com.au</p>
+                <p>NO: <span id="quoNo"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section middle-container">
+        <!-- Content for the middle section can be added here -->
+    </div>
+
+    <div class="section middle-container2">
+        <!-- Content for the middle section can be added here -->
+    </div>
+
+    <div class="section bottom-section-container">
+        <div class="payment-method">
+            <table>
+                <tr>
+                    <th colspan="2">Payment Method</th>
+                </tr>
+                <tr>
+                    <td class="method-number method-1">1</td>
+                    <td class="method-details method-1">
+                        Bank: CBA<br>
+                        BSB: 062 692<br>
+                        Account: 4570 8877<br>
+                        Acc Name: Alphalead Pty Ltd
+                    </td>
+                </tr>
+                <tr>
+                    <td class="method-number method-2">2</td>
+                    <td class="method-details method-2">PayID: 0466 965 168</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="footer">Please leave your Ph. number as Ref. in the transaction.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="total-summary">
+            <table>
+                <tr>
+                    <td>Delivery:</td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Installation:</td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Total:</td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>GST inclusive:</td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Deposit:</td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Balance:</td>
+                    <td contenteditable="true"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function formatDate(date) {
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                return `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`;
+            }
+
+            var issueDateSpan = document.getElementById("issueDate");
+            var dueDateSpan = document.getElementById("dueDateDisplay");
+
+            var currentDate = new Date();
+            issueDateSpan.textContent = formatDate(currentDate);
+
+            var dueDate = new Date(currentDate);
+            dueDate.setDate(dueDate.getDate() + 14);
+            dueDateSpan.textContent = formatDate(dueDate);
+
+            issueDateSpan.addEventListener("input", function () {
+                var parts = issueDateSpan.textContent.split('/');
+                if (parts.length === 3) {
+                    var day = parseInt(parts[0], 10);
+                    var month = parseInt(parts[1], 10) - 1;
+                    var year = parseInt(parts[2], 10);
+                    var newIssueDate = new Date(year, month, day);
+                    if (!isNaN(newIssueDate)) {
+                        var newDueDate = new Date(newIssueDate);
+                        newDueDate.setDate(newDueDate.getDate() + 14);
+                        dueDateSpan.textContent = formatDate(newDueDate);
+                    }
+                }
+            });
+
+            const fields = ['ref', 'customer', 'address', 'phone', 'email'];
+            fields.forEach((field, index) => {
+                const element = document.getElementById(field);
+                element.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        if (index < fields.length - 1) {
+                            document.getElementById(fields[index + 1]).focus();
+                        }
+                    }
+                });
+            });
+
+            function generateQuoNo() {
+                var now = new Date();
+                var year = now.getFullYear();
+                var month = String(now.getMonth() + 1).padStart(2, '0');
+                var day = String(now.getDate()).padStart(2, '0');
+                var hours = String(now.getHours()).padStart(2, '0');
+                return year + month + day + hours;
+            }
+
+            window.QuoNo = generateQuoNo();
+
+            document.getElementById('quoNo').textContent = window.QuoNo;
+        });
+    </script>
+</body>
+
+</html>
